@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Applica il font "Inter" e imposta il testo a 15px */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: red;
+    margin-top: -3px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Stili per l'header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+
+header .left h1 {
+    color: red;
+    font-size: 22px;
+    font-weight: normal;
+    position: fixed;
+    left: 10px;
+}
+
+header .right a {
+    color: red;
+    text-decoration: underline;
+    font-size: 22px;
+    font-weight: normal;
+    position: fixed; /* Fissa "About" in alto a destra */
+    top: 6px; /* Posiziona 10px dal top della finestra */
+    right: 10px; /* Posiziona 10px dal lato destro */
+}
+
+/* Menu fisso */
+.fixed-text-bar {
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.fixed-text-bar a {
+    color: red;
+    text-decoration: underline;
+    margin-right: 30px;
+}
+
+.fixed-text-bar a:last-child {
+    margin-right: 500px;
+}
+
+.responsive-title{
+    display: none;
+}
+
+/* Contenitore con due colonne */
+.content-container {
+    display: flex; /* Flexbox per creare le due colonne */
+    justify-content: space-between;
+    gap: 20px; /* Spazio tra le colonne */
+    margin-top: 20px;
+}
+
+.content-container1 {
+    display: flex; /* Flexbox per creare le due colonne */
+    justify-content: space-between;
+    gap: 20px; /* Spazio tra le colonne */
+    margin-top: 40px;
+}
+
+.left-column {
+    flex-basis: 40%; /* Imposta la larghezza della colonna delle immagini al 70% */
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+h2 {
+    color: red;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.description1 { 
+    margin-top: 10px;
+}
+
+.ice-title {
+    margin-top: 5500px;
+}
+.description2 { 
+    margin-top: 10px;
+}
+
+
+
+/* Flexbox per allineare "Art direction, editorial design" e "2024" sulla stessa riga */
+.text-row {
+    display: flex;
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+    align-items: center; /* Allinea verticalmente al centro */
+    margin-bottom: 10px; /* Spazio sotto la riga */
+}
+
+/* Stile per "Art direction, editorial design" */
+.left-second-column {
+    flex: 1; /* Occupa lo spazio rimanente sulla sinistra */
+    text-align: left;
+    color: red;
+    font-size: 22px; /* Mantieni la dimensione del testo */
+}
+
+/* Classe per personalizzare il colore dei link */
+.custom-link {
+    color: red; /* Sostituisci 'blue' con il colore che preferisci */
+    text-decoration: none; /* Rimuovi la sottolineatura, se necessario */
+    text-decoration: underline;
+}
+
+.custom-link:hover {
+    color: red; /* Colore diverso per il link al passaggio del mouse */
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse, se desiderato */
+    text-decoration: underline;
+}
+
+/* Colonna di immagini e video */
+.right-column {
+    flex-basis: 60%; /* Imposta la larghezza della colonna delle immagini al 60% */
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+/* Immagini allineate */
+.aligned-image, .custom-video {
+    width: 100%;
+    height: auto;
+}
+
+/* Stile per "2024" */
+.right {
+    text-align: right;
+    color: red;
+    font-size: 22px; /* Mantieni la dimensione del testo */
+}
+
+/* Video specifico */
+.custom-video {
+    width: 100%; /* Occupa tutta la larghezza della colonna */
+    max-width: 100%; /* Imposta una larghezza massima */
+    height: auto; /* Mantiene il rapporto d'aspetto */
+}
+
+
+
+
+.text-strip {
+    color: red; /* Colore del testo */
+    font-size: 15px; /* Dimensione del testo */
+    text-align: left; /* Testo centrato */
+    padding: 20px; /* Spaziatura interna */
+    margin: 20px 0; /* Margini sopra e sotto */
+    left: -40px;
+    top: 50%;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 50px;
+    font-weight: normal;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    .responsive-title{
+        display: block;
+    }
+
+    .left-column {
+        display: none;
+    }
+
+    .right-column {
+        flex-basis: 100%; /* Imposta la larghezza della colonna delle immagini al 60% */
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+    }
+
+    .fixed-text-bar {
+    position: fixed;
+    z-index: 1000;
+    top: 40px;
+    left: 0; /* Posizionato vicino al bordo sinistro */
+    transform: translateY(0%);
+    display: flex;
+    flex-direction: column; /* Disposizione verticale */
+    align-items: left; /* Centrare gli elementi */
+    padding-left: 10px; /* Aggiungi padding per spaziatura */
+    font-size: 15px;
+    }
+    
+    .fixed-text-bar a:last-child {
+    }
+
+    .content-container1 {
+        display: flex; /* Flexbox per creare le due colonne */
+        justify-content: space-between;
+        gap: 20px; /* Spazio tra le colonne */
+        margin-top: 160px;
+    }
+
+    .responsive-title{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .text-row{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
