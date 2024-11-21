@@ -172,21 +172,33 @@ h2 {
 
 
 
+.text-container {
+    position: fixed; /* Mantiene il contenitore fisso nella finestra */
+    top: 50%; /* Centra verticalmente nella pagina */
+    left: 0;
+    transform: translateY(-50%); /* Centra il contenitore verticalmente */
+    display: flex; /* Disposizione orizzontale per la versione desktop */
+    justify-content: space-between; /* Spazio tra .text-strip e .text-mail */
+    width: 100%; /* Fa occupare l'intera larghezza */
+    padding: 0 10px; /* Aggiunge padding ai lati */
+    box-sizing: border-box; /* Garantisce che il padding non influisca sulla larghezza */
+    align-items: center; /* Allinea gli elementi verticalmente */
+}
+
 .text-strip {
-    color: red; /* Colore del testo */
-    font-size: 15px; /* Dimensione del testo */
-    text-align: left; /* Testo centrato */
-    padding: 20px; /* Spaziatura interna */
-    margin: 20px 0; /* Margini sopra e sotto */
-    left: -40px;
-    top: 50%;
-    display: flex;
-    position: fixed;
-    z-index: 1000;
-    transform: translateY(-50%);
-    width: 100%;
-    padding: 0 50px;
-    font-weight: normal;
+    font-size: 15px;
+    color: red;
+    max-width: 80%; /* Mantiene una larghezza limitata per il layout desktop */
+    white-space: nowrap; /* Impedisce che il testo vada a capo */
+    overflow: hidden; /* Nasconde il testo che eccede (opzionale, se necessario) */
+    text-overflow: ellipsis; /* Mostra i puntini di sospensione se il testo è troppo lungo (opzionale) */
+}
+
+.text-mail {
+    font-size: 15px;
+    color: red;
+    text-align: right; /* Allinea il testo della mail a destra */
+    max-width: 30%; /* Imposta una larghezza massima per un layout uniforme */
 }
 
 
@@ -239,6 +251,28 @@ h2 {
     .text-row{
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .text-container {
+        flex-direction: column; /* Dispone gli elementi uno sotto l'altro */
+        align-items: flex-start; /* Allinea il contenuto a sinistra */
+        gap: 10px; /* Aggiunge spazio tra gli elementi */
+    }
+
+    .text-strip, .text-mail {
+        max-width: 100%; /* Gli elementi occupano l'intera larghezza */
+        text-align: left; /* Allinea il testo a sinistra */
+    }
+
+    .text-strip {
+        white-space: normal; /* Permette il capo per migliorare la leggibilità */
+        max-width: 100%; /* Occupa tutta la larghezza del contenitore */
+        word-wrap: break-word; /* Spezza le parole troppo lunghe (opzionale) */
+        font-size: 14px; /* Riduce leggermente la dimensione del testo su mobile */
+    }
+
+    .text-mail {
+        margin-top: 10px; /* Aggiunge spazio sopra la mail */
     }
 
 }
