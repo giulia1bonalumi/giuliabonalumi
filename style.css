@@ -47,7 +47,7 @@ header .right a {
     position: fixed;
     z-index: 1000;
     top: 50%;
-    left: -40px;
+    left: -50px;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
