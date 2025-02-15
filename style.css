@@ -204,10 +204,7 @@ h2 {
 
 
 @media (max-width: 768px) {
-    .works-section {
-        display: none; /* Nasconde i lavori di default su mobile */
-    }
-
+    
     .responsive-title{
         display: block;
     }

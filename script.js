@@ -1,3 +1,11 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth <= 768) {
+            window.location.href = "about.html"; // Reindirizza ad About se su mobile
+        }
+    });
+</script>
+
 // Offsets personalizzati
 const desktopOffset = 45; // Offset per desktop
 const mobileOffset = 165; // Offset per mobile (adatta in base al tuo design)
@@ -29,23 +37,5 @@ document.querySelectorAll('.fixed-text-bar a').forEach(anchor => {
         } else {
             console.error(`Elemento non trovato per il selettore: ${targetSelector}`);
         }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const aboutSection = document.getElementById("about");
-    const worksSection = document.getElementById("works");
-    const showWorksButton = document.getElementById("show-works");
-
-    // Se siamo su mobile, mostra solo "About" all'inizio
-    if (window.innerWidth <= 768) {
-        worksSection.style.display = "none"; // Nasconde i lavori all'apertura
-    }
-
-    // Quando si clicca su "Works", mostra i lavori e nasconde "About"
-    showWorksButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        aboutSection.style.display = "none";
-        worksSection.style.display = "block";
     });
 });
