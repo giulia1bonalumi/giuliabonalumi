@@ -1,11 +1,3 @@
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (window.innerWidth <= 768) {
-            window.location.href = "about.html"; // Reindirizza ad About se su mobile
-        }
-    });
-</script>
-
 // Offsets personalizzati
 const desktopOffset = 45; // Offset per desktop
 const mobileOffset = 165; // Offset per mobile (adatta in base al tuo design)
