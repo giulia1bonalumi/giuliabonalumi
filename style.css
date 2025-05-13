@@ -240,7 +240,7 @@ h2 {
         display: flex; /* Flexbox per creare le due colonne */
         justify-content: space-between;
         gap: 20px; /* Spazio tra le colonne */
-        margin-top: 160px;
+        margin-top: 200px;
     }
 
     .responsive-title{
