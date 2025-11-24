@@ -197,13 +197,11 @@ h2 {
     white-space: nowrap; /* Impedisce che il testo vada a capo */
     overflow: hidden; /* Nasconde il testo che eccede (opzionale, se necessario) */
     text-overflow: ellipsis; /* Mostra i puntini di sospensione se il testo è troppo lungo (opzionale) */
-    text-align: center; /* Allinea il testo della mail a destra */
 }
 
 .text-mail {
     font-size: 15px;
     color: red;
-    text-align: center; /* Allinea il testo della mail a destra */
     text-align: right; /* Allinea il testo della mail a destra */
     max-width: 30%; /* Imposta una larghezza massima per un layout uniforme */
 }
