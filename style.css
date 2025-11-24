@@ -1,10 +1,11 @@
+/* Reset di base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Applica il font "Inter" e imposta il testo a 15px */
+/* Corpo e font generico */
 body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -17,17 +18,16 @@ html {
 }
 
 .back-to-top {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Stili per l'header */
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
 }
-
 
 header .left h1 {
     color: red;
@@ -43,11 +43,11 @@ header .right a {
     font-size: 22px;
     font-weight: normal;
     position: fixed;
-    top: 6px; 
-    right: 10px; 
+    top: 6px;
+    right: 10px;
 }
 
-/* Menu fisso */
+/* MENU FISSO HOME */
 .fixed-text-bar {
     position: fixed;
     z-index: 1000;
@@ -72,30 +72,31 @@ header .right a {
     margin-right: 500px;
 }
 
-.responsive-title{
+.responsive-title {
     display: none;
 }
 
-/* Contenitore con due colonne */
-.content-container {
-    display: flex; /* Flexbox per creare le due colonne */
-    justify-content: space-between;
-    gap: 20px; 
-    margin-top: 20px;
-}
-
+/* CONTENITORI SEZIONI HOME */
+.content-container,
 .content-container1 {
-    display: flex; /* Flexbox per creare le due colonne */
+    display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-top: 40px;
 }
 
 .left-column {
-    flex-basis: 40%; /* Imposta la larghezza della colonna delle immagini al 70% */
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+}
+
+.right-column {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
 }
 
 h2 {
@@ -104,113 +105,103 @@ h2 {
     font-weight: normal;
 }
 
-.description1 { 
+.description1 {
     margin-top: 10px;
 }
 
-.ice-title {
-    margin-top: 5500px;
-}
-.description2 { 
-    margin-top: 10px;
-}
-
-
-
-/* Flexbox per allineare "Art direction, editorial design" e "2024" sulla stessa riga */
 .text-row {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 10px; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-/* Stile per "Art direction, editorial design" */
 .left-second-column {
-    flex: 1; /* Occupa lo spazio rimanente sulla sinistra */
+    flex: 1;
     text-align: left;
     color: red;
-    font-size: 22px; /* Mantieni la dimensione del testo */
+    font-size: 22px;
 }
 
-/* Classe per personalizzare il colore dei link */
-.custom-link {
-    color: red; 
-    text-decoration: none; 
-    text-decoration: underline;
+.right {
+    text-align: right;
+    color: red;
+    font-size: 22px;
 }
 
-.custom-link:hover {
-    color: red; 
-    text-decoration: underline; 
-    text-decoration: underline;
-}
-
-/* Colonna di immagini e video */
-.right-column {
-    flex-basis: 60%; 
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-}
-
-/* Immagini allineate */
-.aligned-image, .custom-video {
+/* IMMAGINI E VIDEO */
+.aligned-image,
+.custom-video {
     width: 100%;
     height: auto;
 }
 
-/* Stile per "2024" */
-.right {
-    text-align: right;
-    color: red;
-    font-size: 22px; /* Mantieni la dimensione del testo */
-}
-
-/* Video specifico */
 .custom-video {
-    width: 100%; 
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
 }
 
+/* LINK PERSONALIZZATI */
+.custom-link {
+    color: red;
+    text-decoration: underline;
+}
 
+.custom-link:hover {
+    color: red;
+    text-decoration: underline;
+}
 
+/* ----------------------------- */
+/*           ABOUT PAGE          */
+/* ----------------------------- */
 
+/* Testo centrale (Graphic designer + mail) */
 .text-container {
     position: fixed;
-    top: 50%; /* Centra verticalmente nella pagina */
+    top: 50%;
     left: 0;
-    transform: translateY(-50%); /* Centra il contenitore verticalmente */
-    display: flex; /* Disposizione orizzontale per la versione desktop */
-    justify-content: space-between; /* Spazio tra .text-strip e .text-mail */
-    width: 100%; /* Fa occupare l'intera larghezza */
-    padding: 0 10px; /* Aggiunge padding ai lati */
-    box-sizing: border-box; /* Garantisce che il padding non influisca sulla larghezza */
-    align-items: center; /* Allinea gli elementi verticalmente */
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* sinistra e destra */
+    align-items: center;
+    padding-left: 10px;  /* stesso margine del titolo */
+    padding-right: 10px; /* stesso margine del link Works */
+    box-sizing: border-box;
 }
 
 .text-strip {
     font-size: 15px;
     color: red;
-    max-width: 80%; /* Mantiene una larghezza limitata per il layout desktop */
-    white-space: nowrap; /* Impedisce che il testo vada a capo */
-    overflow: hidden; /* Nasconde il testo che eccede (opzionale, se necessario) */
-    text-overflow: ellipsis; /* Mostra i puntini di sospensione se il testo è troppo lungo (opzionale) */
+    text-align: left;
+    margin-left: 0;
 }
 
 .text-mail {
     font-size: 15px;
     color: red;
-    text-align: right; /* Allinea il testo della mail a destra */
-    max-width: 30%; /* Imposta una larghezza massima per un layout uniforme */
+    text-align: right;
+    margin-right: 0;
 }
 
+/* Frase lunga in basso */
+.bottom-text {
+    position: fixed;
+    bottom: 10px;
+    left: 10px; /* allineata come il titolo */
+    text-align: left;
+    font-size: 15px;
+    color: red;
+    max-width: 90%;
+    line-height: 1.4;
+}
 
-
+/* ----------------------------- */
+/*          RESPONSIVE           */
+/* ----------------------------- */
 @media (max-width: 768px) {
-    
-    .responsive-title{
+    .responsive-title {
         display: block;
     }
 
@@ -219,65 +210,53 @@ h2 {
     }
 
     .right-column {
-        flex-basis: 100%; /* Imposta la larghezza della colonna delle immagini al 60% */
-        display: flex;
-        flex-direction: column;
-        margin-right: 0px;
+        flex-basis: 100%;
+        margin-right: 0;
     }
 
     .fixed-text-bar {
-    position: fixed;
-    z-index: 1000;
-    top: 40px;
-    left: 0; /* Posizionato vicino al bordo sinistro */
-    transform: translateY(0%);
-    display: flex;
-    flex-direction: column; /* Disposizione verticale */
-    align-items: left; /* Centrare gli elementi */
-    padding-left: 10px; /* Aggiungi padding per spaziatura */
-    font-size: 15px;
-    }
-    
-    .fixed-text-bar a:last-child {
+        position: fixed;
+        z-index: 1000;
+        top: 40px;
+        left: 0;
+        transform: translateY(0%);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 10px;
+        font-size: 15px;
     }
 
     .content-container1 {
-        display: flex; /* Flexbox per creare le due colonne */
-        justify-content: space-between;
-        gap: 20px; /* Spazio tra le colonne */
         margin-top: 200px;
     }
 
-    .responsive-title{
-        margin-left: 10px;
-        margin-right: 10px;
+    .responsive-title,
+    .text-row {
+        margin: 0 10px;
     }
 
-    .text-row{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
+    /* ABOUT responsive */
     .text-container {
-        flex-direction: column; /* Dispone gli elementi uno sotto l'altro */
-        align-items: flex-start; /* Allinea il contenuto a sinistra */
-        gap: 10px; /* Aggiunge spazio tra gli elementi */
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0 10px;
+        top: 45%;
+        transform: translateY(-45%);
     }
 
-    .text-strip, .text-mail {
-        max-width: 100%; /* Gli elementi occupano l'intera larghezza */
-        text-align: left; /* Allinea il testo a sinistra */
-    }
-
-    .text-strip {
-        white-space: normal; /* Permette il capo per migliorare la leggibilità */
-        max-width: 100%; /* Occupa tutta la larghezza del contenitore */
-        word-wrap: break-word; /* Spezza le parole troppo lunghe (opzionale) */
-        font-size: 14px; /* Riduce leggermente la dimensione del testo su mobile */
-    }
-
+    .text-strip,
     .text-mail {
-        margin-top: 10px; /* Aggiunge spazio sopra la mail */
+        text-align: left;
+        margin: 0;
+        font-size: 14px;
     }
 
+    .bottom-text {
+        bottom: 10px;
+        left: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
 }
