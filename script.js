@@ -1,33 +1,48 @@
-// Offsets personalizzati
-const desktopOffset = 45; // Offset per desktop
-const mobileOffset = 165; // Offset per mobile (adatta in base al tuo design)
+// Offsets personalizzati per l’header fisso
+const desktopOffset = 45;  // Offset per desktop
+const mobileOffset = 165;  // Offset per mobile
 
-// Funzione per determinare l'offset attuale
+// Funzione che restituisce l’offset corretto
 function getScrollOffset() {
     return window.innerWidth <= 768 ? mobileOffset : desktopOffset;
 }
 
-// Aggiungi evento click ai link della fixed-text-bar
+// Funzione per scrollare verso un elemento
+function smoothScrollTo(targetSelector) {
+    const targetElement = document.querySelector(targetSelector);
+
+    if (targetElement) {
+        const targetPosition = targetElement.getBoundingClientRect().top;
+        const scrollOffset = getScrollOffset();
+        const scrollPosition = window.scrollY + targetPosition - scrollOffset;
+
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error(`Elemento non trovato per il selettore: ${targetSelector}`);
+    }
+}
+
+// --- MENU FISSO ---
 document.querySelectorAll('.fixed-text-bar a').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
-        event.preventDefault(); // Previene il comportamento predefinito del link
-
-        // Ottieni il selettore CSS dal data-target
+        event.preventDefault();
         const targetSelector = this.getAttribute('data-target');
-        const targetElement = document.querySelector(targetSelector);
+        smoothScrollTo(targetSelector);
+    });
+});
 
-        // Scrolla all'inizio del contenitore se esiste
-        if (targetElement) {
-            const targetPosition = targetElement.getBoundingClientRect().top; // Posizione relativa all'inizio della finestra
-            const scrollOffset = getScrollOffset(); // Ottieni l'offset attuale
-            const scrollPosition = window.scrollY + targetPosition - scrollOffset; // Aggiungi offset
+// --- BACK TO TOP ---
+document.querySelector('.back-to-top').addEventListener('click', function (event) {
+    event.preventDefault();
 
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: 'smooth' // Scroll fluido
-            });
-        } else {
-            console.error(`Elemento non trovato per il selettore: ${targetSelector}`);
-        }
+    // Scrolla fino all'inizio della pagina, tenendo conto dell’offset
+    const scrollOffset = getScrollOffset();
+
+    window.scrollTo({
+        top: 0 - scrollOffset,
+        behavior: 'smooth'
     });
 });
